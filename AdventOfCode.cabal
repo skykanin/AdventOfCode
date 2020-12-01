@@ -25,7 +25,7 @@ executable aoc
 
 library aoc-lib
   import:              shared-properties
-  exposed-modules:     Day1.Day1
+  exposed-modules:     Day1.Solution
                      , FileInput
   build-depends:       base == 4.*
                      , containers
