@@ -1,16 +1,16 @@
 -- |
-module AOC.Day2.Solution where
+module Day2.Solution where
 
 import FileInput (readStringList)
 
 type Policy = (Int, Int, Char, String)
 
+-- | Parse happy path
 parsePolicy :: String -> Policy
 parsePolicy s = (read m, read n, char, passwd)
   where
-    (m, t) = span (/= '-') s
-    (n, t') = span (/= ' ') (tail t)
-    (char : ':' : ' ' : passwd) = tail t'
+    (m, n) = tail <$> span (/= '-') nums
+    [nums, char:_, passwd] = words s
 
 validPassword :: Policy -> Bool
 validPassword (m, n, char, passwd) =
