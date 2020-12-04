@@ -1,18 +1,18 @@
 -- | Day 3 task
-module AOC.Day3.Solution where
+module Day3.Solution where
 
 import FileInput (readStringList)
 
-countTrees :: Int -> Int -> Int -> [[Char]] -> Int
-countTrees _ _ _ [] = 0
-countTrees r d n (x : xs) = target + countTrees r d (n + 1) (drop (d - 1) xs)
+countTrees :: (Int, Int) -> Int -> [[Char]] -> Int
+countTrees _ _ [] = 0
+countTrees t@(x, y) l (row : rows) = target + countTrees t (l + 1) (drop (y - 1) rows)
   where
-    target = fromEnum (cycle x !! (r * n) == '#')
+    target = fromEnum (cycle row !! (x * l) == '#')
 
-countSlopes :: [[Char]] -> Int
-countSlopes xs =
+slopeProduct :: [[Char]] -> Int
+slopeProduct xs =
   product
-    . map (\(r, d) -> countTrees r d 0 xs)
+    . map (\t -> countTrees t 0 xs)
     $ [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
 d3p1 :: IO ()
