@@ -30,9 +30,9 @@ findSumOf3 expenses = fst $ foldr f (0, S.empty) expenses
 d1p1 :: IO ()
 d1p1 = do
   expenses <- readIntList "src/AOC/Day1/input.txt"
-  print $ findSumOf2 expenses
+  putStrLn ("Day 1 Part 1: " ++ show (findSumOf2 expenses))
 
 d1p2 :: IO ()
 d1p2 = do
   expenses <- readIntList "src/AOC/Day1/input.txt"
-  print $ findSumOf3 expenses
+  putStrLn ("Day 1 Part 2: " ++ show (findSumOf3 expenses))

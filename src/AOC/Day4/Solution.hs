@@ -1,5 +1,5 @@
 -- | Day 4 task
-module Day4.Solution where
+module Day4.Solution (d4p1, d4p2) where
 
 import Data.Either (lefts, rights)
 import Data.List (groupBy)
@@ -132,9 +132,9 @@ solutionP2 =
 d4p1 :: IO ()
 d4p1 = do
   str <- readString "src/AOC/Day4/input.txt"
-  print $ solutionP1 str
+  putStrLn $ "Day 4 Part 1: " ++ show (solutionP1 str)
 
 d4p2 :: IO ()
 d4p2 = do
   str <- readString "src/AOC/Day4/input.txt"
-  print $ solutionP2 str
+  putStrLn $ "Day 4 Part 2: " ++ show (solutionP2 str)

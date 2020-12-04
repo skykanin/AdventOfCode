@@ -1,5 +1,9 @@
 -- |
-module Day2.Solution where
+module Day2.Solution
+  ( d2p1,
+    d2p2,
+  )
+where
 
 import Data.Bits (xor)
 import FileInput (readStringList)
@@ -30,9 +34,9 @@ validPassword2 (m, n, char, passwd) = check m `xor` check n
 d2p1 :: IO ()
 d2p1 = do
   content <- readStringList "src/AOC/Day2/input.txt"
-  print (countValid validPassword content)
+  putStrLn ("Day 2 Part 1: " ++ show (countValid validPassword content))
 
 d2p2 :: IO ()
 d2p2 = do
   content <- readStringList "src/AOC/Day2/input.txt"
-  print (countValid validPassword2 content)
+  putStrLn ("Day 2 Part 2: " ++ show (countValid validPassword2 content))

@@ -18,9 +18,9 @@ slopeProduct xs =
 d3p1 :: IO ()
 d3p1 = do
   content <- readStringList "src/AOC/Day3/input.txt"
-  print $ countTrees 3 1 0 content
+  putStrLn ("Day 3 Part 1: " ++ show (countTrees (3, 1) 0 content))
 
 d3p2 :: IO ()
 d3p2 = do
   content <- readStringList "src/AOC/Day3/input.txt"
-  print $ countSlopes content
+  putStrLn ("Day 3 Part 2: " ++ show (slopeProduct content))
